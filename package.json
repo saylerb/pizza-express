@@ -4,7 +4,7 @@
   "description": "A place to eat pizzas",
   "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/turingschool-examples/pizza-express#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "node-options": "0.0.7"
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "mocha": "^3.0.2",

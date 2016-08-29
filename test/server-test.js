@@ -75,4 +75,29 @@ describe('Server', () => {
       })
     })
   })
+
+
+  describe('GET /pizzas/:id', () => {
+    beforeEach(() => {
+      app.locals.pizzas.testPizza = fixtures.validPizza
+    })
+
+    it('should not return 404', (done) => {
+      this.request.get('/pizzas/testPizza', (error, response) => {
+        if (error) { done(error) }
+        assert.notEqual(response.statusCode, 404)
+        done()
+      })
+    })
+
+    it('should return a page that has the title of the pizza', (done) => {
+      var pizza = app.locals.pizzas.testPizza
+      this.request.get('/pizzas/testPizza', (error, response) => {
+        if (error) { done(error) }
+        assert(response.body.includes(pizza.name),
+          `"${response.body}" does not include "${pizza.name}".`)
+        done()
+      })
+    })
+  })
 })

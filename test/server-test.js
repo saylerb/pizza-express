@@ -33,5 +33,16 @@ describe('Server', () => {
         done()
       })
     })
+
+    it('should have a body with the name of the application', (done) => {
+      var title = app.locals.title;
+    
+      this.request.get('/', (error, response) => {
+        if (error) { done(error) }
+        assert(response.body.includes(title),
+               `"${response.body}" does not include "${title}".`);
+        done()
+      })
+    })
   })
 })

@@ -1,0 +1,25 @@
+{
+  "name": "pizza-express",
+  "version": "1.0.0",
+  "description": "A place to eat pizzas",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turingschool-examples/pizza-express.git"
+  },
+  "keywords": [
+    "express",
+    "pizza",
+    "yum",
+    "casserole"
+  ],
+  "author": "Brian Sayler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/turingschool-examples/pizza-express/issues"
+  },
+  "homepage": "https://github.com/turingschool-examples/pizza-express#readme"
+}

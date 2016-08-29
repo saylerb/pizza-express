@@ -1,6 +1,7 @@
-const assert = require('assert');
-const app = require('../server');
-const request = require('request');
+const assert = require('assert')
+const app = require('../server')
+const request = require('request')
+const fixtures = require('./fixtures')
 
 describe('Server', () => {
 
@@ -54,14 +55,9 @@ describe('Server', () => {
 
     it('should receive and store data', (done) => {
 
-      var validPizza = {
-        pizza: {
-          name: 'A vegan pizza',
-          toppings: [ 'mushrooms', 'onions', 'garlic', 'black olives' ]
-        }
-      }
-      
-      this.request.post('/pizzas', { form: validPizza }, (error, response) => {
+      var payload = { pizza: fixtures.validPizza };
+
+      this.request.post('/pizzas', { form: payload }, (error, response) => {
         if (error) { done(error) }
             var pizzaCount = Object.keys(app.locals.pizzas).length
 
@@ -70,8 +66,6 @@ describe('Server', () => {
         done()
       })
     })
-
-
 
     it('should not return 404', (done) => {
       this.request.post('/pizzas', (error, response) => {
